@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Person Page</title>
+</head>
+<body>
+    <p>Name: <em th:text="${person.name}"></em></p>
+    <p>Surname: <em th:text="${person.surname}"></em></p>
+    <form th:action="'/person/delete/'+ ${person.id}" th:method="post" >
+        <button>Delete</button>
+    </form>
+
+    <hr>
+
+    <a href="/">Back to list</a>
+</body>
+</html>

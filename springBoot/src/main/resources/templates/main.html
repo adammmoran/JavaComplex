@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Init Page</title>
+</head>
+<body>
+<form action="/person/create" method="post">
+    <input type="text" name="name">
+    <input type="text" name="surname">
+    <input type="submit">
+</form>
+<hr>
+<ul th:each="person : ${people}">
+    <li>
+       <a th:href="'/person/' + ${person.id}" th:text="${person.name} + ${person.surname}"></a>
+    </li>
+</ul>
+</body>
+</html>
